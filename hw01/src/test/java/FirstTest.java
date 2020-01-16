@@ -47,6 +47,8 @@ public class FirstTest {
     @AfterTest
     public void endSession(){
         logger.info("start endSession");
-        driver.close();
+        if (driver != null) {
+            driver.quit();
+        }
     }
 }
