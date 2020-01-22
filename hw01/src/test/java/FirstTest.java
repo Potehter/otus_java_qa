@@ -10,6 +10,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class FirstTest {
     private static final Logger logger = LogManager.getLogger();
@@ -22,11 +23,12 @@ public class FirstTest {
     public void setUrl(String browser) throws Exception {
         logger.info("Before test");
         if (browser.equalsIgnoreCase("firefox")) {
+            WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
             logger.info("Testing browser is " + browser);
         }
         else if (browser.equalsIgnoreCase("chrome")) {
-            System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
+            WebDriverManager.chromeriver().setup();;
             driver = new ChromeDriver();
             logger.info("Testing browser is " + browser);
         }
