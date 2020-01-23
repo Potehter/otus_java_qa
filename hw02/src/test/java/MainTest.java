@@ -7,11 +7,11 @@ import org.testng.annotations.Test;
 public class MainTest {
     public String baseUrl = "https://otus.ru/";
     public WebDriver driver;
+    protected static String browser = System.getProperty("browser");
 
     @BeforeTest
     public void setUrl() throws Exception {
-        //System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
-        driver = WebDriverFactory.createNewDriver("cHrOmE");
+        driver = WebDriverFactory.createNewDriver(browser);
         driver.get(baseUrl);
     }
 
