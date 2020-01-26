@@ -28,7 +28,7 @@ public class FirstTest {
             logger.info("Testing browser is " + browser);
         }
         else if (browser.equalsIgnoreCase("chrome")) {
-            WebDriverManager.chromeriver().setup();;
+            WebDriverManager.chromedriver().setup();;
             driver = new ChromeDriver();
             logger.info("Testing browser is " + browser);
         }
