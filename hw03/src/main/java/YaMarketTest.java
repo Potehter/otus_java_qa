@@ -40,22 +40,24 @@ public class YaMarketTest extends BaseClass{
         searchSomeText("Мобильные телефоны Xiaomi");
 
         elem = driver.findElement(By.cssSelector("a.header2-menu__item_type_compare"));
+        //не всегда работает переход, если не наводить мышку
         moveMouseToElement(elem);
         elem.click();
 
+        logger.info("Count of comparing products: "
+                + getCountElem("div.n-compare-head__content div.n-compare-cell"));
+        Assert.assertEquals(getCountElem("div.n-compare-head__content div.n-compare-cell"), 2);
         driver.findElement(By.cssSelector("span.n-compare-show-controls__all")).click();
         new WebDriverWait(driver, 2l)
                 .until(ExpectedConditions.invisibilityOfElementLocated(
                         By.cssSelector("div.n-compare-table_loading_yes")));
         boolean visibilityOS = driver.findElement(By.xpath("//div[text()=\"Операционная система\"]")).isDisplayed();
-        //System.out.println(driver.findElement(By.xpath("//div[text()=\"Операционная система\"]")).isDisplayed());
         logger.info("Операционная система отображается: " + visibilityOS);
         Assert.assertTrue(visibilityOS);
         driver.findElement(By.cssSelector("span.n-compare-show-controls__diff")).click();
         visibilityOS = driver.findElement(By.xpath("//div[text()=\"Операционная система\"]")).isDisplayed();
         logger.info("Операционная система отображается: " + visibilityOS);
         Assert.assertFalse(visibilityOS);
-        //System.out.println(driver.findElement(By.xpath("//div[text()=\"Операционная система\"]")).isDisplayed());
     }
 
     public int getCountElem(String locator) {
