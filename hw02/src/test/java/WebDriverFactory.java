@@ -8,6 +8,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class WebDriverFactory {
     public static WebDriver createNewDriver(String webDriverName) throws Exception{
         System.out.println(webDriverName);
+        if (webDriverName == null) webDriverName = "chrome";
         if (webDriverName.equalsIgnoreCase("chrome")) {
             WebDriverManager.chromedriver().setup();
             return new ChromeDriver();
