@@ -13,7 +13,7 @@
         <webdrivermanager.version>3.8.1</webdrivermanager.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <selenium-java.version>3.141.59</selenium-java.version>
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
         <hamcrest.version>2.2</hamcrest.version>
     </properties>
 
