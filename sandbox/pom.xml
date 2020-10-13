@@ -16,7 +16,7 @@
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <webdrivermanager.version>3.8.1</webdrivermanager.version>
         <selenium-java.version>3.141.59</selenium-java.version>
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
         <hamcrest.version>2.2</hamcrest.version>
         <log4j-slf4j-impl.version>2.13.0</log4j-slf4j-impl.version>
         <maven-surefire-plugin.version>2.22.0</maven-surefire-plugin.version>
